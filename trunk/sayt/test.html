@@ -1,0 +1,34 @@
+<html>
+
+  <head>
+    <title>Search-as-you-type test</title>
+    <style type='text/css'>
+      body {
+        font-size: 84%;
+      }
+      #searchField {
+        font-family: Arial, Helvetica, sans-serif; 
+        width: 30em;
+        border-bottom: 1px solid #c9c9c9;
+        border-right: 1px solid #c9c9c9;
+        border-top: 1px solid #494949;
+        border-left: 1px solid #494949;
+        padding: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Try typing in <strong>Tom Cruise</strong> or 
+      <strong>Nicole Kidman</strong>:
+      <br />
+      <input id='searchField' type='input' />
+    </p>
+
+    <script src='search-as-you-type.js'></script>
+    <script>
+      searchAsYouType.initialize(document.getElementById('searchField'), true);
+    </script>
+  </body>
+</html>
