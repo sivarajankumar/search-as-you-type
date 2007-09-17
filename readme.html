@@ -1,0 +1,311 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+
+<style>
+BODY, P, DIV, H1, H2, H3, H4, H5, H6, ADDRESS, OL, UL, TITLE, TD, OPTION, SELECT {
+ font-family: Verdana;
+ 
+}
+
+BODY, P, DIV, ADDRESS, OL, UL, LI, TITLE, TD, OPTION, SELECT {  
+  font-size: 10.0pt;
+  margin-top:0pt;  
+  margin-bottom:0pt;  
+} 
+
+BODY, P {
+  margin-left:0pt; 
+  margin-right:0pt;
+}
+
+BODY {
+  line-height: ;
+
+  margin: 6px;
+  padding: 0px;
+}
+
+h6 { font-size: 10pt }
+h5 { font-size: 11pt }
+h4 { font-size: 12pt }
+h3 { font-size: 13pt }
+h2 { font-size: 14pt }
+h1 { font-size: 16pt }
+
+blockquote {padding: 10px; border: 1px #DDDDDD dashed }
+
+a img {border: 0}
+
+#doc-contents {
+  background-color: #ffffff;
+}
+
+</style>
+
+
+
+
+</head>
+
+
+<body revision="aggzgx9fx4_133cmj6dr:316">
+
+<h3>
+  README - <i>Search As You Type</i>
+</h3>
+<p>
+  The <i>Search As You Type</i> project makes it easy to add dynamic suggestions
+  and tab completion to a search box.
+</p>
+<br>
+We've designed the project so you can get it up and running with sample data out
+of the box.&nbsp; Then you can later integrate it with your existing systems by
+hooking into a simple server side interface.<br>
+<br>
+<h3>
+  System Requirements
+</h3>
+Since the bulk of the logic is all encompassed in the provided javascript file
+(<span style="FONT-FAMILY:Courier New">search-as-you-type.js</span>), this
+project could easily be adapted to any web serving stack you already have in
+place.&nbsp; However to make it easier for you to visualize and implement a
+fully integrated solution, we've packaged XAMP server side components and
+described the full setup in this readme.<br>
+<br>
+The following are required to get <i>Search As You Type</i> installed and
+running against the provided sample data:
+<ul>
+  <li>
+    Apache HTTP Server 2.2.4 or later
+  </li>
+  <li>
+    PHP 5.2.3 or later
+  </li>
+</ul>
+We've referenced an easy packaged installation process for these
+<a href="#Installation_of_Apache_HTTP_Serv" id=dora title=below>below</a>.&nbsp;
+You can skip that section if you already have these available.<br>
+<br>
+<h3>
+  Contents
+</h3>
+<blockquote>
+  <span style="FONT-FAMILY:Courier New">readme.html&nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; --</span> this file<br>
+  <span style="FONT-FAMILY:Courier New">sayt/&nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp; --</span> directory of web server resources for the project<br>
+  <span style="FONT-FAMILY:Courier New">&nbsp;&nbsp;&nbsp;&nbsp;
+  search-as-you-type.js&nbsp;&nbsp;&nbsp; --</span> the main javascript file
+  with the search as you type logic<br>
+  <span style="FONT-FAMILY:Courier New">&nbsp; &nbsp;&nbsp;
+  search-responder.php&nbsp;&nbsp; &nbsp; --</span> server component that
+  returns search suggestions to the browser<br>
+  <span style="FONT-FAMILY:Courier New">&nbsp;&nbsp; &nbsp;
+  test.html&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp; --</span> sample page with a search box for testing your
+  installation<br>
+  <span style="FONT-FAMILY:Courier New"> &nbsp; &nbsp;&nbsp;
+  test-data.txt&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; --</span>
+  sample data file<br>
+  <span style="FONT-FAMILY:Courier New">&nbsp; &nbsp;&nbsp;
+  images/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  --</span> directory of image resources for the suggestions UI<br>
+  <span style="FONT-FAMILY:Courier New">&nbsp; &nbsp;&nbsp;
+  styles/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  --</span> directory of style resource for the suggestions UI<br>
+</blockquote>
+<br>
+<h3>
+  <a id=ldyg name=Getting_Started></a> Getting Started
+</h3>
+To get started with <i>Search As You Type</i> just follow these simple steps:<br>
+<ol>
+  <li>
+    Download and extract the distribution of this project from
+    <a href=http://code.google.com/p/search-as-you-type/downloads/list id=x35j title=http://code.google.com/p/search-as-you-type/downloads/list>http://code.google.com/p/search-as-you-type/downloads/list</a>
+  </li>
+  <li>
+    If you don't already have the prerequisite Apache HTTP Server and PHP
+    installed and available, follow
+    <a href="#Installation_of_Apache_HTTP_Serv" id=zggr title=these>these</a>
+    instructions to conveniently install them auto-configured to work together.
+  </li>
+  <li>
+    Replace the <i>{resourcesPath}</i> token in
+    <span style="FONT-FAMILY:Courier New">search-as-you-type.js</span> with the
+    URL to your <i>Search As You Type</i> web directory (i.e.
+    http://localhost/sayt/)
+  </li>
+  <li>
+    Replace the <i>{ajaxResponderUrl}</i> token in
+    <span style="FONT-FAMILY:Courier New">search-as-you-type.js</span> with URL
+    of your search-responder file (i.e.
+    http://localhost/sayt/search-responder.php)
+  </li>
+  <li>
+    Install the provided <span style="FONT-FAMILY:Courier New">sayt</span>
+    directory onto your web server.&nbsp; If you followed the installation
+    instructions referred to in step 2 above, then this can be done by copying
+    the <span style="FONT-FAMILY:Courier New">sayt</span> directory
+    under&nbsp;<i>&lt;xampp-install</i>-dir&gt;/xampplite/htdocs/
+  </li>
+  <li>
+    Run the sample queries suggested
+    <a href="#Sample_Data_Queries" id=k6in title=below>below</a>
+    to verify that you have <i>Search As You Type</i> running correctly
+  </li>
+</ol>
+<br>
+<h3>
+  <a id=ll.3 name=Installation_of_Apache_HTTP_Serv></a>Installation of Apache
+  HTTP Server &amp; PHP
+</h3>
+If you don't already have Apache and PHP installed, then the <i>XAMPP</i>
+project makes it easy to get them installed and configured to run together.<br>
+<br>
+Here are the steps for Windows environments:<br>
+<ol>
+  <li>
+    <b>Download:</b>
+  </li>
+  <ul>
+    <li>
+      Download the XAMPP Lite zip file (1.6.3a or later) from
+      <a href=http://www.apachefriends.org/en/xampp-windows.html#646 id=ag16 title=http://www.apachefriends.org/en/xampp-windows.html#646>http://www.apachefriends.org/en/xampp-windows.html#646</a>
+    </li>
+  </ul>
+  <li>
+    <b>Install:</b>
+  </li>
+  <ul>
+    <li>
+      Extract the zip file into a local directory, we'll call this directory
+      <i>&lt;xampp-install-dir&gt;</i><br>
+    </li>
+    <li>
+      Run <i>&lt;xampp-install-dir&gt;</i>/xampplite/setup_xampp.bat
+    </li>
+  </ul>
+  <li>
+    <b>Start:</b>
+  </li>
+  <ul>
+    <li>
+      Run <i>&lt;xampp-install-dir&gt;</i>/xampplite/apache_start.bat to start
+      the web server
+    </li>
+    <li>
+      If you get an error message it may be that you have another web server
+      running that you'll need to shut down.&nbsp; Check this
+      <a href=http://www.apachefriends.org/en/faq-xampp-windows.html#nostart id=tn82 title="FAQ article">FAQ
+      article</a> to help troubleshoot and remember to re-run the apache_start
+      script above once the issue has been resolved.<br>
+    </li>
+  </ul>
+  <li>
+    <b>Test:</b>
+  </li>
+  <ul>
+    <li>
+      Verify that the Apache HTTP server is running correctly by loading
+      <a href=http://localhost/ id=lqgm title=http://localhost/>http://localhost/</a>
+      into your web browser and look for the XAMPP logo<br>
+    </li>
+  </ul>
+</ol>
+<br>
+This setup is for development purposes only.&nbsp; You should take the necessary
+steps to security harden your installation of these components before pushing
+this to a production environment.&nbsp; More info about doing this is at
+<a href=http://www.apachefriends.org/en/xampp-windows.html#1221 id=q81w title=http://www.apachefriends.org/en/xampp-windows.html#1221>http://www.apachefriends.org/en/xampp-windows.html#1221</a><br>
+<br>
+The analogous steps for Linux environments are similar and are described in
+detail at
+<a href=http://www.apachefriends.org/en/xampp-linux.html#374 id=tgfa title=http://www.apachefriends.org/en/xampp-linux.html#374>http://www.apachefriends.org/en/xampp-linux.html#374</a>.&nbsp;
+And the security hardening steps are described here:
+<a href=http://www.apachefriends.org/en/xampp-linux.html#381 id=wso6 title=http://www.apachefriends.org/en/xampp-linux.html#381>http://www.apachefriends.org/en/xampp-linux.html#381</a>.<br>
+<br>
+<h3>
+  <a id=yjqw name=Sample_Data_Queries></a>Sample Data Queries<br>
+</h3>
+First be sure you've gone through all of the steps in the
+<a href="#Getting_Started" id=x6s_ title="Getting Started">Getting
+Started</a> section above.<br>
+<br>
+The sample data (<span style="FONT-FAMILY:Courier New">test-data.txt</span>)
+includes some information about actors from <i>The Internet Movie Database</i>.<br>
+<br>
+Make sure your web server is running as was described in the installation
+section
+<a href="#Installation_of_Apache_HTTP_Serv" id=xqek title=above>above</a>.<br>
+<br>
+Now <span style=FONT-FAMILY:Verdana>load
+</span><a href=http://localhost/sayt/test.html id=lxqj style=FONT-FAMILY:Verdana title=http://localhost/sayt/test.html>http://localhost/sayt/test.html</a><span style=FONT-FAMILY:Verdana>
+into your web </span>browser.&nbsp; Try typing the following into the search box
+and look for the suggestions and tab completions as you type:<br>
+<ul>
+  <li>
+    <i>nicole</i>
+  </li>
+  <li>
+    <i>tom</i>
+  </li>
+  <li>
+    <i>tom c</i><br>
+  </li>
+</ul>
+<br>
+<br>
+<h3>
+  <a id=h7w9 name=Customizing_Search_As_You_Type_f></a> Customizing <i>Search As
+  You Type</i> for your environment
+</h3>
+The provided <span style="FONT-FAMILY:Courier New">search-responder.php</span>
+file is fairly lightweight.&nbsp; Its role is simply to respond to a given query
+parameter ("query") by returning the appropriate suggestions or tab completion
+data to display for that query.<br>
+<br>
+There are two approaches to customize <i>Search As You Type</i> by hooking into
+your own data and logic.<br>
+<br>
+The first approach involves leveraging
+<span style="FONT-FAMILY:Courier New">search-responder.php</span> by modifying
+the implementation of its
+<span style="FONT-FAMILY:Courier New"><span style=FONT-FAMILY:Verdana><span style="FONT-FAMILY:Courier New">GetData</span>
+</span></span><span style="FONT-FAMILY:Courier New"><span style=FONT-FAMILY:Verdana>function.&nbsp;
+This function
+</span></span><span style="FONT-FAMILY:Courier New"><span style=FONT-FAMILY:Verdana>by
+default loads the data file
+<span style="FONT-FAMILY:Courier New">test-data.txt</span> into an array of
+records.&nbsp; If you can retrieve your own data from PHP code and get it into
+the form of the records read in from
+<span style="FONT-FAMILY:Courier New">test-data.txt</span>, then modifying
+<span style="FONT-FAMILY:Courier New">GetData</span> with your own data
+retrieval may be the best way to integrate into your environment.<br>
+<br>
+An alternate approach that is more flexible involves creating your own server
+component to replace
+<span style="FONT-FAMILY:Courier New">search-responder.php</span>.&nbsp; This
+can be using any server technology or architecture you'd like, with the only
+requirement being that the interface to the client
+(<span style="FONT-FAMILY:Courier New">search-as-you-type.js</span>) must remain
+the same.&nbsp; In particular your server component (Java Servlet, CGI script,
+JSP page, etc) must accept a query parameter named "query" and it must return
+the appropriate data i</span></span>n the form of JSON encoded parameters in a
+javascript handler function call.&nbsp; To see this in action, try loading
+<span style="FONT-FAMILY:Courier New">search-responder.php</span> directly in
+your web browser
+(<a href=http://localhost/sayt/search-responder.php id=j:qn title=http://localhost/sayt/search-responder.php>http://localhost/sayt/search-responder.php</a>)
+and view the source of the response.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></body>
+</html>
