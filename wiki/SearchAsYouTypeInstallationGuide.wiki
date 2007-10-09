@@ -76,7 +76,7 @@ Now load http://localhost/sayt/test.html into your web browser.  Try typing the 
 
 Adding Search As You Type to your Google Mini or Google Search Appliance Front End
 First, create a new test front end. In this new test front end, search for the Search box input form section and replace all the text in that section (i.e. up to the Bottom search box text) with the following:
-
+{{{
 <xsl:template name="search_box">
   <xsl:param name="type"/>
   <form name="gs" method="GET" action="search">
@@ -225,7 +225,7 @@ First, create a new test front end. In this new test front end, search for the S
 
 </form>
 </xsl:template>
-
+}}}
 		
 
 Then, replace the {YOUR_HOST_DIR} text above with the location and directory of your search-as-you-type directory/files.
