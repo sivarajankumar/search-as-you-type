@@ -6,7 +6,7 @@ The new Search-as-you-Type (SayT) application allows you to add dynamic, real-ti
 
 We've also designed the project so you can get it up and running with sample data out of the box.   Then you can later integrate it with your existing systems by hooking into a simple server side interface.
 
-=System Requirements=
+= System Requirements =
 Since the bulk of the logic is all encompassed in the provided javascript file (search-as-you-type.js), this project could easily be adapted to any web serving stack you already have in place.  However to make it easier for you to visualize and implement a fully integrated solution, we've described the full setup including how to add the packaged XAMPP server side components if you don't have them.
 
 The following are required to get Search As You Type installed and running against the provided sample data:
@@ -16,7 +16,7 @@ The following are required to get Search As You Type installed and running again
 
 We've referenced an easy packaged installation process for these below.  You can skip that section if you already have these available.
 
-=Contents=
+= Contents =
 
     readme.html                   -- this file
     sayt/                         -- directory of web server resources for the project
@@ -39,7 +39,7 @@ To get started with Search As You Type just follow these simple steps:
    6. Run the sample queries suggested below to verify that you have Search As You Type running correctly
 
 
-Installation of Apache HTTP Server & PHP
+= Installation of Apache HTTP Server & PHP =
 If you don't already have Apache and PHP installed, then the XAMPP project makes it easy to get them installed and configured to run together.
 
 Here are the steps for Windows environments:
@@ -60,7 +60,7 @@ This setup is for development purposes only.  You should take the necessary step
 
 The analogous steps for Linux environments are similar and are described in detail at http://www.apachefriends.org/en/xampp-linux.html#374.  And the security hardening steps are described here: http://www.apachefriends.org/en/xampp-linux.html#381.
 
-Sample Data Queries
+= Sample Data Queries =
 First be sure you've gone through all of the steps in the Getting Started section above.
 
 The sample data (test-data.txt) includes some sample information such as conference rooms, offices, people, glossary definitions, and query suggestions to give some ideas on what you might do with Search as you type in your own environment.
@@ -238,21 +238,23 @@ To any HTML text input field, add the following argument id='sayt'.
 
 
 For instance:
+{{{
   <input id='sayt' type='input'>
+}}}
 
 
 (If you already have an id, you can reuse that and change the 'sayt' field below.)
 
 
 And then, below this input field, add the following 2 lines of code:
-
+{{{
    <script src='http://localhost/sayt/search-as-you-type.js'></script>
    <script>searchAsYouType.initialize(document.getElementById('sayt'), true);</script>
-
+}}}
 
 And that's all there is to it!
 
-Customizing Search As You Type for your environment
+= Customizing Search As You Type for your environment =
 The provided search-responder.php file is fairly lightweight.  Its role is simply to respond to a given query parameter ("query") by returning the appropriate suggestions or tab completion data to display for that query.
 
 There are two approaches to customize Search As You Type by hooking into your own data and logic.
