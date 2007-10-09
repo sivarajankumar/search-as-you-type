@@ -1,5 +1,5 @@
 #labels Featured
-=Overview=
+= Overview =
 
 The new Search-as-you-Type (SayT) application allows you to add dynamic, real-time search to your Google Mini or Google Search Appliance. Your search box will dynamically present suggestions and auto-complete queries before the user is even done typing! In fact, we've architected it in such a way that you can use Search-as-you-Type on any text input field!
 
