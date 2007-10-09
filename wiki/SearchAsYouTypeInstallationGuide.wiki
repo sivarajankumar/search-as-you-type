@@ -239,6 +239,8 @@ And then, below this input field, add the following 2 lines of code:
    <script>searchAsYouType.initialize(document.getElementById('sayt'), true);</script>
 }}}
 
+Please keep in mind that Internet Explorer doesn't allow you to put a <script> that modifies the DOM inside an open tag (e.g. a <table> tag), so please be sure the above script calls are placed appropriately.
+
 And that's all there is to it!
 
 = Customizing Search-As-You-Type for your environment =
@@ -249,3 +251,5 @@ There are two approaches to customize Search-As-You-Type by hooking into your ow
 The first approach involves leveraging search-responder.php by modifying the implementation of its `GetData` function.  This function by default loads the data file test-data.txt into an array of records.  If you can retrieve your own data from PHP code and get it into the form of the records read in from test-data.txt, then modifying `GetData` with your own data retrieval may be the best way to integrate into your environment.
 
 An alternate approach that is more flexible involves creating your own server component to replace search-responder.php.  This can be using any server technology or architecture you'd like, with the only requirement being that the interface to the client (search-as-you-type.js) must remain the same.  In particular your server component (Java Servlet, CGI script, JSP page, etc) must accept a query parameter named "query" and it must return the appropriate data in the form of JSON encoded parameters in a javascript handler function call.  To see this in action, try loading search-responder.php directly in your web browser (http://localhost/sayt/search-responder.php) and view the source of the response.
+
+_Known issue: You may receive css warnings in older versions of FireFox (e.g. 1.5).  These should not cause any problems._
