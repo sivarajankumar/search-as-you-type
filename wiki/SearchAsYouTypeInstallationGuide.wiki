@@ -3,7 +3,6 @@
 
 The new Search-as-you-Type (SayT) application allows you to add dynamic, real-time search to your Google Mini or Google Search Appliance. Your search box will dynamically present suggestions and auto-complete queries before the user is even done typing! In fact, we've architected it in such a way that you can use Search-as-you-Type on any text input field!
 
-
 We've also designed the project so you can get it up and running with sample data out of the box.   Then you can later integrate it with your existing systems by hooking into a simple server side interface.
 
 = System Requirements =
@@ -18,14 +17,13 @@ We've referenced an easy packaged installation process for these below.  You can
 
 = Contents =
 
-    readme.html                   -- this file
-    sayt/                         -- directory of web server resources for the project
-         search-as-you-type.js    -- the main javascript file with the search as you type logic
-         search-responder.php     -- server component that returns search suggestions to the browser
-         test.html                -- sample page with a search box for testing your installation
-         test-data.txt            -- sample data file
-         images/                  -- directory of image resources for the suggestions UI
-         styles/                  -- directory of style resource for the suggestions UI
+# readme.html (this file)
+# sayt/search-as-you-type.js (the main javascript file with the search as you type logic)
+# search-responder.php (server component that returns search suggestions to the browser)
+# test.html (sample page with a search box for testing your installation)
+# test-data.txt (sample data file)
+# images/ (directory of image resources for the suggestions UI)
+# styles/ (directory of style resource for the suggestions UI)
 
 
 = Getting Started =
