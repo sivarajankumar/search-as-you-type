@@ -262,4 +262,6 @@ The first approach involves leveraging search-responder.php by modifying the imp
 
 An alternate approach that is more flexible involves creating your own server component to replace search-responder.php.  This can be using any server technology or architecture you'd like, with the only requirement being that the interface to the client (search-as-you-type.js) must remain the same.  In particular your server component (Java Servlet, CGI script, JSP page, etc) must accept a query parameter named "query" and it must return the appropriate data in the form of JSON encoded parameters in a javascript handler function call.  To see this in action, try loading search-responder.php directly in your web browser (http://localhost/sayt/search-responder.php) and view the source of the response.
 
-_Known issue: You may receive css warnings in older versions of FireFox (e.g. 1.5).  These should not cause any problems._
+_Notes:
+  * You may receive css warnings in older versions of FireFox (e.g. 1.5).  These should not cause any problems.
+  * The bottom of the box (i.e. the shadow) may not appear on the search-as-you-type drop down box in Internet Explorer due to how IE sometimes handles relative paths in the .css file.  To ensure your images load correctly, simply edit styles/ie.css and make sure your image locations all have the absolute path to your images._
