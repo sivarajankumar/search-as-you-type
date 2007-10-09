@@ -211,13 +211,22 @@ First, create a new test front end. In this new test front end, search for the s
 </xsl:template>
 }}}
 		
-
+Then search for the section titled: `Utility function for constructing copyright text` and replace all the text in that section (i.e. up to the section titled `Utility functions for generating html entities`) with the following:
 {{{
+<xsl:template name="copyright">
+  <center>
+    <br/><br/>
+    <p>
+    <font face="arial,sans-serif" size="-1" color="#2f2f2f">
+      Powered by Google Search Appliance</font>
+    </p>
+  </center>
 <script src='http://{YOUR_HOST_DIR}/search-as-you-type.js'></script>
 <script>searchAsYouType.initialize(document.getElementById('q'), true);</script>
+</xsl:template>
 }}}
-Then, replace the {YOUR_HOST_DIR} text above with the location and directory of your search-as-you-type directory/files.
 
+Finally, replace the {YOUR_HOST_DIR} text above with the location and directory of your search-as-you-type directory/files.
 
 Now, once your test front end works, you can perform the same search and replace in your current front end stylesheet or custom front end stylesheet. Enjoy!
 
