@@ -17,13 +17,13 @@ We've referenced an easy packaged installation process for these below.  You can
 
 = Contents =
 
-* readme.html (this file)
-* sayt/search-as-you-type.js (the main javascript file with the search as you type logic)
-* search-responder.php (server component that returns search suggestions to the browser)
-* test.html (sample page with a search box for testing your installation)
-* test-data.txt (sample data file)
-* images/ (directory of image resources for the suggestions UI)
-* styles/ (directory of style resource for the suggestions UI)
+  # readme.html (this file)
+  # sayt/search-as-you-type.js (the main javascript file with the search as you type logic)
+  * search-responder.php (server component that returns search suggestions to the browser)
+  * test.html (sample page with a search box for testing your installation)
+  * test-data.txt (sample data file)
+  * images/ (directory of image resources for the suggestions UI)
+  * styles/ (directory of style resource for the suggestions UI)
 
 
 = Getting Started =
