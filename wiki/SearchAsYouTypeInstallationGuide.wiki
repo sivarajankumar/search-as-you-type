@@ -8,7 +8,7 @@ We've also designed the project so you can get it up and running with sample dat
 = System Requirements =
 Since the bulk of the logic is all encompassed in the provided javascript file (search-as-you-type.js), this project could easily be adapted to any web serving stack you already have in place.  However to make it easier for you to visualize and implement a fully integrated solution, we've described the full setup including how to add the packaged XAMPP server side components if you don't have them.
 
-The following are required to get Search As You Type installed and running against the provided sample data:
+The following are required to get Search-As-You-Type installed and running against the provided sample data:
 
     * Apache HTTP Server 2.2.4 or later
     * PHP 5.2.3 or later
@@ -18,7 +18,7 @@ We've referenced an easy packaged installation process for these below.  You can
 = Contents =
 
   # readme.html (this file)
-  # sayt/search-as-you-type.js (the main javascript file with the search as you type logic)
+  # sayt/search-as-you-type.js (the main javascript file with the search-as-you-type logic)
   # search-responder.php (server component that returns search suggestions to the browser)
   # test.html (sample page with a search box for testing your installation)
   # test-data.txt (sample data file)
@@ -27,14 +27,14 @@ We've referenced an easy packaged installation process for these below.  You can
 
 
 = Getting Started =
-To get started with Search As You Type just follow these simple steps:
+To get started with Search-As-You-Type just follow these simple steps:
 
    # Download and extract the distribution of this project from http://code.google.com/p/search-as-you-type/downloads/list
    # If you don't already have the prerequisite Apache HTTP Server and PHP installed and available, follow these instructions to conveniently install them auto-configured to work together.
-   # Replace the {resourcesPath} token in search-as-you-type.js with the URL to your Search As You Type web directory (i.e. http://localhost/sayt/)
+   # Replace the {resourcesPath} token in search-as-you-type.js with the URL to your Search-As-You-Type web directory (i.e. http://localhost/sayt/)
    # Replace the {ajaxResponderUrl} token in search-as-you-type.js with URL of your search-responder file (i.e. http://localhost/sayt/search-responder.php)
    # Install the provided sayt directory onto your web server.  If you followed the installation instructions referred to in step 2 above, then this can be done by copying the sayt directory under <xampp-install-dir>/xampplite/htdocs/
-   # Run the sample queries suggested below to verify that you have Search As You Type running correctly
+   # Run the sample queries suggested below to verify that you have Search-As-You-Type running correctly
 
 
 = Installation of Apache HTTP Server & PHP =
@@ -55,13 +55,13 @@ The analogous steps for Linux environments are similar and are described in deta
 = Sample Data Queries =
 First be sure you've gone through all of the steps in the Getting Started section above.
 
-The sample data (test-data.txt) includes some sample information such as conference rooms, offices, people, glossary definitions, and query suggestions to give some ideas on what you might do with Search as you type in your own environment.
+The sample data (test-data.txt) includes some sample information such as people and offices.  You can add any type of information you might need such as conference rooms, glossary definitions, and other query suggestions.  Be creative!
 
 Make sure your web server is running as was described in the installation section above.
 
 Now load http://localhost/sayt/test.html into your web browser.  Try typing T into the search box to see the suggestions.  Now type a 'u' and the word 'Tulsa' should autocomplete for you.
 
-Adding Search As You Type to your Google Mini or Google Search Appliance Front End
+Adding Search-As-You-Type to your Google Mini or Google Search Appliance Front End
 First, create a new test front end. In this new test front end, search for the Search box input form section and replace all the text in that section (i.e. up to the Bottom search box text) with the following:
 {{{
 <xsl:template name="search_box">
@@ -220,7 +220,7 @@ Then, replace the {YOUR_HOST_DIR} text above with the location and directory of 
 
 Now, once your test front end works, you can perform the same search and replace in your current front end stylesheet or custom front end stylesheet. Enjoy!
 
-Adding Search As You Type to any other search field or input text field
+Adding Search-As-You-Type to any other search field or input text field
 To any HTML text input field, add the following argument id='sayt'.
 
 
@@ -241,10 +241,10 @@ And then, below this input field, add the following 2 lines of code:
 
 And that's all there is to it!
 
-= Customizing Search As You Type for your environment =
+= Customizing Search-As-You-Type for your environment =
 The provided search-responder.php file is fairly lightweight.  Its role is simply to respond to a given query parameter ("query") by returning the appropriate suggestions or tab completion data to display for that query.
 
-There are two approaches to customize Search As You Type by hooking into your own data and logic.
+There are two approaches to customize Search-As-You-Type by hooking into your own data and logic.
 
 The first approach involves leveraging search-responder.php by modifying the implementation of its GetData function.  This function by default loads the data file test-data.txt into an array of records.  If you can retrieve your own data from PHP code and get it into the form of the records read in from test-data.txt, then modifying GetData with your own data retrieval may be the best way to integrate into your environment.
 
