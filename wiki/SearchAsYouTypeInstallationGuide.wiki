@@ -42,17 +42,11 @@ If you don't already have Apache and PHP installed, then the XAMPP project makes
 
 Here are the steps for Windows environments:
 
-   1. Download:
-          * Download the XAMPP Lite zip file (1.6.3a or later) from http://www.apachefriends.org/en/xampp-windows.html#646
-   2. Install:
-          * Extract the zip file into a local directory, we'll call this directory <xampp-install-dir>
-          * Run <xampp-install-dir>/xampplite/setup_xampp.bat
-   3. Start:
-          * Run <xampp-install-dir>/xampplite/apache_start.bat to start the web server
-          * If you get an error message it may be that you have another web server running that you'll need to shut down.  Check this FAQ article to help troubleshoot and remember to re-run the apache_start script above once the issue has been resolved.
-   4. Test:
-          * Verify that the Apache HTTP server is running correctly by loading http://localhost/ into your web browser and look for the XAMPP logo
-
+   # Download the XAMPP Lite zip file (1.6.3a or later) from http://www.apachefriends.org/en/xampp-windows.html#646
+   # Extract the zip file into a local directory, we'll call this directory <xampp-install-dir>
+   # Run <xampp-install-dir>/xampplite/setup_xampp.bat
+   # Run <xampp-install-dir>/xampplite/apache_start.bat to start the web server (If you get an error message it may be that you have another web server running that you'll need to shut down.  Check this FAQ article to help troubleshoot and remember to re-run the apache_start script above once the issue has been resolved.)
+   # Verify that the Apache HTTP server is running correctly by loading http://localhost/ into your web browser and look for the XAMPP logo
 
 This setup is for development purposes only.  You should take the necessary steps to security harden your installation of these components before pushing this to a production environment.  More info about doing this is at http://www.apachefriends.org/en/xampp-windows.html#1221
 
@@ -65,12 +59,7 @@ The sample data (test-data.txt) includes some sample information such as confere
 
 Make sure your web server is running as was described in the installation section above.
 
-Now load http://localhost/sayt/test.html into your web browser.  Try typing the following into the search box and look for the suggestions and tab completions as you type:
-
-    * c
-    * charleston
-    * python
-
+Now load http://localhost/sayt/test.html into your web browser.  Try typing T into the search box to see the suggestions.  Now type a 'u' and the word 'Tulsa' should autocomplete for you.
 
 Adding Search As You Type to your Google Mini or Google Search Appliance Front End
 First, create a new test front end. In this new test front end, search for the Search box input form section and replace all the text in that section (i.e. up to the Bottom search box text) with the following:
