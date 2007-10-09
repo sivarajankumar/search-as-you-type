@@ -19,22 +19,22 @@ We've referenced an easy packaged installation process for these below.  You can
 
   # readme.html (this file)
   # sayt/search-as-you-type.js (the main javascript file with the search as you type logic)
-  * search-responder.php (server component that returns search suggestions to the browser)
-  * test.html (sample page with a search box for testing your installation)
-  * test-data.txt (sample data file)
-  * images/ (directory of image resources for the suggestions UI)
-  * styles/ (directory of style resource for the suggestions UI)
+  # search-responder.php (server component that returns search suggestions to the browser)
+  # test.html (sample page with a search box for testing your installation)
+  # test-data.txt (sample data file)
+  # images/ (directory of image resources for the suggestions UI)
+  # styles/ (directory of style resource for the suggestions UI)
 
 
 = Getting Started =
 To get started with Search As You Type just follow these simple steps:
 
-   1. Download and extract the distribution of this project from http://code.google.com/p/search-as-you-type/downloads/list
-   2. If you don't already have the prerequisite Apache HTTP Server and PHP installed and available, follow these instructions to conveniently install them auto-configured to work together.
-   3. Replace the {resourcesPath} token in search-as-you-type.js with the URL to your Search As You Type web directory (i.e. http://localhost/sayt/)
-   4. Replace the {ajaxResponderUrl} token in search-as-you-type.js with URL of your search-responder file (i.e. http://localhost/sayt/search-responder.php)
-   5. Install the provided sayt directory onto your web server.  If you followed the installation instructions referred to in step 2 above, then this can be done by copying the sayt directory under <xampp-install-dir>/xampplite/htdocs/
-   6. Run the sample queries suggested below to verify that you have Search As You Type running correctly
+   # Download and extract the distribution of this project from http://code.google.com/p/search-as-you-type/downloads/list
+   # If you don't already have the prerequisite Apache HTTP Server and PHP installed and available, follow these instructions to conveniently install them auto-configured to work together.
+   # Replace the {resourcesPath} token in search-as-you-type.js with the URL to your Search As You Type web directory (i.e. http://localhost/sayt/)
+   # Replace the {ajaxResponderUrl} token in search-as-you-type.js with URL of your search-responder file (i.e. http://localhost/sayt/search-responder.php)
+   # Install the provided sayt directory onto your web server.  If you followed the installation instructions referred to in step 2 above, then this can be done by copying the sayt directory under <xampp-install-dir>/xampplite/htdocs/
+   # Run the sample queries suggested below to verify that you have Search As You Type running correctly
 
 
 = Installation of Apache HTTP Server & PHP =
