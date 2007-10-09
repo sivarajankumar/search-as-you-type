@@ -62,7 +62,7 @@ Make sure your web server is running as was described in the installation sectio
 Now load http://localhost/sayt/test.html into your web browser.  Try typing T into the search box to see the suggestions.  Now type a 'u' and the word 'Tulsa' should autocomplete for you.
 
 Adding Search-As-You-Type to your Google Mini or Google Search Appliance Front End
-First, create a new test front end. In this new test front end, search for the Search box input form section and replace all the text in that section (i.e. up to the Bottom search box text) with the following:
+First, create a new test front end. In this new test front end, search for the section titled: `Search box input form` and replace all the text in that section (i.e. up to the section titled `Bottom search box`) with the following:
 {{{
 <xsl:template name="search_box">
   <xsl:param name="type"/>
@@ -206,15 +206,15 @@ First, create a new test front end. In this new test front end, search for the S
     <xsl:text>
     </xsl:text>
     <xsl:call-template name="form_params"/>
-
-<script src='http://{YOUR_HOST_DIR}/search-as-you-type.js'></script>
-<script>searchAsYouType.initialize(document.getElementById('q'), true);</script>
-
 </form>
 </xsl:template>
 }}}
 		
 
+{{{
+<script src='http://{YOUR_HOST_DIR}/search-as-you-type.js'></script>
+<script>searchAsYouType.initialize(document.getElementById('q'), true);</script>
+}}}
 Then, replace the {YOUR_HOST_DIR} text above with the location and directory of your search-as-you-type directory/files.
 
 
