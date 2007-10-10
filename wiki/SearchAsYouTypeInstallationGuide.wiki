@@ -1,6 +1,5 @@
 #labels Featured
 = Overview =
-
 The new Search-as-you-Type (SayT) application allows you to add dynamic, real-time search to your Google Mini or Google Search Appliance. Your search box will dynamically present suggestions and auto-complete queries before the user is even done typing! In fact, we've architected it in such a way that you can use Search-as-you-Type on any text input field!
 
 We've also designed the project so you can get it up and running with sample data out of the box.   Then you can later integrate it with your existing systems by hooking into a simple server side interface.
@@ -62,7 +61,6 @@ Make sure your web server is running as was described in the installation sectio
 Now load http://localhost/sayt/test.html into your web browser.  Try typing T into the search box to see the suggestions.  Now type a 'u' and the word 'Tulsa' should autocomplete for you.
 
 = Adding Search-As-You-Type to your Google Mini or Google Search Appliance Front End =
-
 First, create a new test front end. In this new test front end, search for the section titled: `Search box input form` and replace all the text in that section (i.e. up to the section titled `Bottom search box`) with the following:
 {{{
 <xsl:template name="search_box">
@@ -253,10 +251,26 @@ Please keep in mind that Internet Explorer doesn't allow you to put a <script> t
 
 And that's all there is to it!
 
-= Customizing Search-As-You-Type for your environment =
-The provided search-responder.php file is fairly lightweight.  Its role is simply to respond to a given query parameter ("query") by returning the appropriate suggestions or tab completion data to display for that query.
+= Basic customization: Adding your own data to the sample data file =
+Although we have provided a sample file (test-data.txt), we are sure that most of you will want more than just `Tom Cruise` showing up in your drop-down box.
 
-There are two approaches to customize Search-As-You-Type by hooking into your own data and logic.
+The format of this flat file is pretty simple.  It is a pipe (`|`) delimited file where each line is a record.
+
+The first field is the name of the query term.  This is what will be used if the query auto-completes.
+
+The second field is the type of query (e.g. `People`).  This affects the look-and-feel of those types of results as defined in your styles folder (see generic.css or customized.css).  For instance, you might want `People` results that show up in the drop-down box to have a yellow border and you might want information on conference rooms to have a green border.  Changing those color and style settings should be fairly straightforward once you open the aforementioned .css files.
+
+The third field is simply the html text of the content you'd like to show in the result box.  This can be as advanced as you like.  The sample data shows pretty basic HTML, but we encourage you to add images, tables, etc.  Your HTML can be as long as you'd like, however, the html code has to all remain on the one line in the flat file.
+
+The fourth and last field is the html link of that result - in other words, if the user uses the mouse or down-arrow to go to this result in the drop-down box and clicks on it, then where should they be taken.
+
+= Advanced customization: Using a database =
+
+The provided search-responder.php file is fairly lightweight.  Its role is simply to respond to a given query parameter ("query") by returning the appropriate suggestions or tab completion data to display for that query.  The benefit is that it is very easy to understand and can be edited easily.  The drawback is that it is inefficient for very large amounts of data.
+
+For very large numbers of results, a flat file can become inefficient, so using a database instead is the preferred solution.
+
+There are two approaches to customize Search-As-You-Type if you want to hook into your own data and logic.
 
 The first approach involves leveraging search-responder.php by modifying the implementation of its `GetData` function.  This function by default loads the data file test-data.txt into an array of records.  If you can retrieve your own data from PHP code and get it into the form of the records read in from test-data.txt, then modifying `GetData` with your own data retrieval may be the best way to integrate into your environment.
 
