@@ -15,7 +15,6 @@ The following are required to get Search-As-You-Type installed and running again
 We've referenced an easy packaged installation process for these below.  You can skip that section if you already have these available.
 
 = Contents =
-
   # readme.txt (this file)
   # sayt/search-as-you-type.js (the main javascript file with the search-as-you-type logic)
   # search-responder.php (server component that returns search suggestions to the browser)
@@ -264,17 +263,13 @@ The third field is simply the html text of the content you'd like to show in the
 
 The fourth and last field is the html link of that result - in other words, if the user uses the mouse or down-arrow to go to this result in the drop-down box and clicks on it, then where should they be taken.
 
-= Advanced customization: Using a database =
+= Advanced customization =
 
 The provided search-responder.php file is fairly lightweight.  Its role is simply to respond to a given query parameter ("query") by returning the appropriate suggestions or tab completion data to display for that query.  The benefit is that it is very easy to understand and can be edited easily.  The drawback is that it is inefficient for very large amounts of data.
 
 For very large numbers of results, a flat file can become inefficient, so using a database instead is the preferred solution.
 
-There are two approaches to customize Search-As-You-Type if you want to hook into your own data and logic.
-
-The first approach involves leveraging search-responder.php by modifying the implementation of its `GetData` function.  This function by default loads the data file test-data.txt into an array of records.  If you can retrieve your own data from PHP code and get it into the form of the records read in from test-data.txt, then modifying `GetData` with your own data retrieval may be the best way to integrate into your environment.
-
-An alternate approach that is more flexible involves creating your own server component to replace search-responder.php.  This can be using any server technology or architecture you'd like, with the only requirement being that the interface to the client (search-as-you-type.js) must remain the same.  In particular your server component (Java Servlet, CGI script, JSP page, etc) must accept a query parameter named "query" and it must return the appropriate data in the form of JSON encoded parameters in a javascript handler function call.  To see this in action, try loading search-responder.php directly in your web browser (http://localhost/sayt/search-responder.php) and view the source of the response.
+To do this, you can replace search-responder.php with your own basic implementation.  This can be using any server technology or architecture you'd like, with the only requirement being that the interface to the client (search-as-you-type.js) must remain the same.  In particular your server component (Java Servlet, CGI script, JSP page, etc) must accept a query parameter named "query" and it must return the appropriate data in the form of JSON encoded parameters in a javascript handler function call.
 
 _Notes:
   * You may receive css warnings in older versions of FireFox (e.g. 1.5).  These should not cause any problems.
